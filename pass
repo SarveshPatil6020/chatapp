@@ -1,0 +1,24 @@
+    from_address = 'sarvesh98patil81@gmail.com'
+    password = 'qzvn dswg pxdo kgke'
+
+      try:
+        msg = MIMEMultipart()
+        msg['From'] = from_address
+        msg['To'] = to_address
+        msg['Subject'] = "HDFC BANK : Up to Rs. 2,000 Off on Domestic Flights with HDFC Bank Credit Card + Interest Free EMI"
+
+        body = """How to avail the offer?
+                    Search and choose your preferred flight.
+                    Apply the code at the time of making your booking.
+                    Proceed to the payment page and make your payment.
+                    Proceed to the payments page and pay via HDFC Debit/Credit Card EMI."""
+       
+    
+        # Setup SMTP server
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(from_address, password)
+        text = msg.as_string()
+        server.sendmail(from_address, to_addresses, text)
+        server.quit()
+        st.success(f"Emails sent")
