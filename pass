@@ -1,6 +1,4 @@
-    from_address = 'sarvesh98patil81@gmail.com'
-    password = 'qzvn dswg pxdo kgke'
-
+ 
       try:
         msg = MIMEMultipart()
         msg['From'] = from_address
